@@ -44,3 +44,15 @@ export interface CarDetailsProps {
   closeModal: () => void,
   car: CarProps
 }
+
+export interface FilterProps {
+  manufacturer?: string;
+  year?: number;
+  model?: string;
+  limit?: number;
+  fuel?: string;
+}
+
+export interface SearchParamsProps {
+  searchParams: FilterProps;
+}

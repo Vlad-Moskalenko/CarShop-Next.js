@@ -1,17 +1,16 @@
 import { CarProps } from "@/types";
-import Image from "next/image";
 
 export const generateCarImageUrl = (car: CarProps, angle?: string) => {
-  // const url = new URL("https://cdn.imagin.studio/getimage");
-  // const { make, model, year } = car;
+  const url = new URL("https://cdn.imagin.studio/getimage");
+  const { make, model, year } = car;
 
-  // url.searchParams.append('customer', process.env.NEXT_PUBLIC_IMAGIN_API_KEY || '');
-  // url.searchParams.append('make', make);
-  // url.searchParams.append('modelFamily', model.split(" ")[0]);
-  // url.searchParams.append('zoomType', 'fullscreen');
-  // url.searchParams.append('modelYear', `${year}`);
-  // // url.searchParams.append('zoomLevel', zoomLevel);
-  // url.searchParams.append('angle', `${angle}`);
+  url.searchParams.append('customer', 'uacarshop');
+  url.searchParams.append('make', make);
+  url.searchParams.append('modelFamily', model.split(" ")[0]);
+  url.searchParams.append('zoomType', 'fullscreen');
+  url.searchParams.append('modelYear', `${year}`);
+  // url.searchParams.append('zoomLevel', zoomLevel);
+  url.searchParams.append('angle', `${angle}`);
 
-  return `/images/hero.png`;
+  return `${url}`;
 }
