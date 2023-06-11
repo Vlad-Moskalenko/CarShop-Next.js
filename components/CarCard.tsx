@@ -41,6 +41,7 @@ const CarCard = ({ car }: CarCardProps) => {
           fill
           priority
           className="object-contain"
+          sizes="100%"
         />
       </div>
 
