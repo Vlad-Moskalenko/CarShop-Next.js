@@ -1,7 +1,7 @@
 import { getCars } from '@/services';
 import { SearchParamsProps } from '@/types';
 import { fuels, yearsOfProduction } from '@/constants';
-import { Searchbar, CustomFilter, CarCard, Hero } from '@/components';
+import { Searchbar, CustomFilter, CarCard, Hero, ShowMore } from '@/components';
 
 export default async function Home({ searchParams }: SearchParamsProps) {
   const carsData = await getCars({
@@ -40,10 +40,10 @@ export default async function Home({ searchParams }: SearchParamsProps) {
               ))}
             </div>
 
-            {/* <ShowMore
-            pageNumber={(searchParams.limit || 10) / 10}
-            isNext={(searchParams.limit || 10) > allCars.length}
-          /> */}
+            <ShowMore
+              pageNumber={(searchParams.limit || 10) / 10}
+              isNext={(searchParams.limit || 10) > carsData.length}
+            />
           </section>
         )}
       </div>
